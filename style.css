@@ -6,7 +6,9 @@ body {
   background: #fff;
 }
 
-/* main layout container (controls everything) */
+/* =========================
+   MAIN LAYOUT
+   ========================= */
 .container {
   max-width: 800px;
   margin: 80px auto;
@@ -14,7 +16,7 @@ body {
 }
 
 /* =========================
-   IMAGES (critical fix)
+   IMAGES (global behavior)
    ========================= */
 img {
   max-width: 100%;
@@ -22,10 +24,35 @@ img {
   display: block;
 }
 
-/* spacing specifically for hero/system image */
+/* hero image spacing */
 header img {
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+/* =========================
+   TRUIST / MULTI-IMAGE ROW
+   ========================= */
+.image-row {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+/* each image shares row space */
+.image-row img {
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px; /* optional polish */
+}
+
+/* responsive stack on mobile */
+@media (max-width: 600px) {
+  .image-row {
+    flex-direction: column;
+  }
 }
 
 /* =========================
@@ -41,7 +68,7 @@ h1 {
   color: #444;
   font-size: 16px;
   margin-bottom: 40px;
-  max-width: 70ch; /* improves readability */
+  max-width: 70ch;
   line-height: 1.6;
 }
 
