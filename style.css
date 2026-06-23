@@ -1,103 +1,173 @@
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.65;
   color: #111;
   background: #fff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* =========================
-   MAIN LAYOUT
+   LAYOUT
    ========================= */
+
 .container {
-  max-width: 800px;
-  margin: 80px auto;
-  padding: 0 20px;
+  max-width: 860px;
+  margin: 96px auto;
+  padding: 0 24px;
 }
 
 /* =========================
-   IMAGES (global behavior)
+   TYPOGRAPHY (REFINED)
    ========================= */
+
+h1 {
+  font-size: 40px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 44px;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  color: #444;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 72ch;
+  margin-bottom: 48px;
+}
+
+/* =========================
+   HEADER (MORE ORNATE / CONTEMPORARY)
+   ========================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 14px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* subtle brand text (not dominant) */
+.logo {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* navigation */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  font-size: 14px;
+  color: #111;
+  text-decoration: none;
+
+  padding: 6px 2px;
+  position: relative;
+
+  transition: opacity 0.2s ease;
+}
+
+.nav a:hover {
+  opacity: 0.55;
+}
+
+/* subtle underline animation */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: #111;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================
+   IMAGES
+   ========================= */
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* hero image spacing */
-header img {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-/* =========================
-   TRUIST / MULTI-IMAGE ROW
-   ========================= */
+/* image rows feel more intentional */
 .image-row {
   display: flex;
-  gap: 10px;
-  margin: 12px 0;
+  gap: 14px;
+  margin: 18px 0 10px;
 }
 
-/* each image shares row space */
 .image-row img {
   flex: 1;
-  max-width: 100%;
-  height: auto;
   object-fit: cover;
-  border-radius: 4px; /* optional polish */
+  border-radius: 8px;
+
+  /* subtle depth (very light, not “card UI”) */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
-/* responsive stack on mobile */
+/* responsive */
 @media (max-width: 600px) {
   .image-row {
     flex-direction: column;
   }
 }
 
-/* =========================
-   TYPOGRAPHY
-   ========================= */
-
-h1 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #444;
-  font-size: 16px;
-  margin-bottom: 40px;
-  max-width: 70ch;
-  line-height: 1.6;
-}
-
-h2 {
-  margin-top: 30px;
-  font-size: 18px;
+/* single images */
+section > img {
+  border-radius: 8px;
+  margin: 18px 0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
 }
 
 /* =========================
-   LISTS
+   TEXT STYLES
    ========================= */
 
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-/* =========================
-   TEXT UTILITIES
-   ========================= */
-
-.caption {
-  font-size: 13px;
-  color: #666;
-  margin-top: 6px;
-  margin-bottom: 30px;
+p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #222;
 }
 
 .muted {
@@ -105,15 +175,34 @@ li {
   font-size: 14px;
 }
 
+.caption {
+  font-size: 13px;
+  color: #777;
+  margin-top: 6px;
+  margin-bottom: 28px;
+}
+
+/* =========================
+   LISTS
+   ========================= */
+
+ul {
+  padding-left: 18px;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
 /* =========================
    LINKS
    ========================= */
 
 a {
-  color: #000;
-  text-decoration: underline;
+  color: #111;
+  text-decoration: none;
 }
 
 a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
