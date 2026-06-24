@@ -11,15 +11,15 @@
 
   <header class="site-header">
     <div class="nav-container">
-
       <div class="logo">Systems Design Portfolio</div>
 
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="finserv.html">Financial Services</a>
+        <a href="finserv.html">Financial Systems</a>
         <a href="utility.html">Utility Systems</a>
+        <a href="systems.html">Systems & Compliance</a>
+        <a href="maps.html" onclick="return gateAccess(event)">Map View</a>
       </nav>
-
     </div>
   </header>
 
@@ -29,76 +29,86 @@
       <h1>Systems Design Portfolio</h1>
 
       <p class="subtitle">
-        I design across the full stack of decision systems — from interface surfaces to underlying data transformation workflows
+        I design decision systems across financial, utility, and high-compliance environments — translating complex workflows into structured, usable interfaces.
       </p>
     </header>
 
     <section>
       <h2>Selected Systems</h2>
 
-      <ul>
+      <div class="project-grid">
 
-        <li>
-          Identity & Authentication System (Truist)
+        <div class="project-card">
+          <h3>Financial Systems (Truist)</h3>
+          <p class="project-desc">
+            Identity, onboarding, and authentication systems supporting large-scale consumer banking workflows across legacy and modern infrastructure.
+          </p>
+          <div class="image-row">
+            <img src="images/t0.PNG" alt="Truist system overview">
+          </div>
+          <a class="project-button" href="finserv.html">View Case Study</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Utility Systems (EPRI)</h3>
+          <p class="project-desc">
+            Field inspection and operational workflow digitization for regulated utility infrastructure.
+          </p>
+          <div class="image-row">
+            <img src="images/e1_0.PNG" alt="EPRI system">
+          </div>
+          <a class="project-button" href="utility.html">View Case Study</a>
+        </div>
+
+        <div class="project-card">
+          <h3>Systems & Compliance (JHU APL)</h3>
+          <p class="project-desc">
+            Structured risk assessment and compliance-driven decision workflows in high-reliability environments.
+          </p>
+          <div class="image-row">
+            <img src="images/j1_0_0.PNG" alt="APL workflow">
+          </div>
+          <a class="project-button" href="systems.html">View Case Study</a>
+        </div>
+
+        <!-- MAP CARD -->
+        <div class="project-card">
+          <h3>Geospatial Map View</h3>
+
+          <p class="project-desc">
+            Interactive geospatial decision interface prototype showing structured spatial data visualization and workflow layering.
+          </p>
 
           <div class="image-row">
-            <img src="images/t1.PNG" alt="Truist system 1">
-            <img src="images/t2.PNG" alt="Truist system 2">
-            <img src="images/t3.PNG" alt="Truist system 3">
+            <img src="images/s1.PNG" alt="Map system preview">
           </div>
 
-          <span class="muted">
-            Multi-state onboarding and authentication flows across millions of users
-          </span>
-        </li>
+          <a class="project-button" href="maps.html" onclick="return gateAccess(event)">
+            View Map (Protected)
+          </a>
+        </div>
 
-        <li>
-          Enterprise UX System Modeling (EPRI)
-
-          <div class="image-row">
-            <img src="images/e1.PNG" alt="EPRI system 1">
-          </div>
-
-          <span class="muted">
-            Field-tested utility workflows + operational analytics systems in regulated environments
-          </span>
-        </li>
-
-        <li>
-          Geospatial Intelligence Workflow (Johns Hopkins APL)
-
-          <div class="image-row">
-            <img src="images/j1.PNG" alt="APL workflow">
-          </div>
-
-          <span class="muted">
-            Structured geospatial and operational data workflows for constrained environments
-          </span>
-        </li>
-
-        <li>
-          Environmental Data Fusion Pipeline (VCU / NASA LEND)
-
-          <div class="image-row">
-            <img src="images/LunarHDI.PNG" alt="Lunar system">
-          </div>
-
-          <span class="muted">
-            Multi-source sensor data structured into exploratory analytical systems
-          </span>
-        </li>
-
-      </ul>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <ul>
-        <li><a href="mailto:micahtinklepaugh@gmail.com">Email</a></li>
-      </ul>
+      </div>
     </section>
 
   </main>
+
+<script>
+function gateAccess(e) {
+  e.preventDefault();
+
+  const password = "stavanger";
+  const input = prompt("Enter access password:");
+
+  if (input === password) {
+    window.location.href = "maps.html";
+  } else {
+    alert("Access denied");
+  }
+
+  return false;
+}
+</script>
 
 </body>
 </html>

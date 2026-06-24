@@ -1,8 +1,11 @@
+/* =========================
+   BASE
+   ========================= */
 body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
-  line-height: 1.65;
-  color: #111;
+  line-height: 1.7;
+  color: #0f0f0f;
   background: #fff;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -11,77 +14,76 @@ body {
 /* =========================
    LAYOUT
    ========================= */
-
 .container {
-  max-width: 860px;
+  max-width: 900px;
   margin: 96px auto;
   padding: 0 24px;
 }
 
 /* =========================
-   TYPOGRAPHY (REFINED)
+   TYPOGRAPHY
    ========================= */
-
 h1 {
-  font-size: 40px;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: 44px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   margin-bottom: 14px;
-  font-weight: 600;
+  font-weight: 650;
 }
 
 h2 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-top: 44px;
-  margin-bottom: 14px;
+  font-size: 20px;
+  font-weight: 650;
+  margin-top: 56px;
+  margin-bottom: 18px;
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 650;
+  margin: 0 0 10px 0;
   letter-spacing: -0.01em;
 }
 
 .subtitle {
-  color: #444;
+  color: #333;
   font-size: 17px;
-  line-height: 1.7;
-  max-width: 72ch;
+  line-height: 1.8;
+  max-width: 75ch;
   margin-bottom: 48px;
 }
 
 /* =========================
-   HEADER (MORE ORNATE / CONTEMPORARY)
+   HEADER
    ========================= */
-
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .nav-container {
-  max-width: 860px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 14px 24px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* subtle brand text (not dominant) */
 .logo {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
   color: #666;
   text-transform: uppercase;
 }
 
-/* navigation */
 .nav {
   display: flex;
   gap: 20px;
@@ -91,18 +93,14 @@ h2 {
   font-size: 14px;
   color: #111;
   text-decoration: none;
-
   padding: 6px 2px;
   position: relative;
-
-  transition: opacity 0.2s ease;
 }
 
 .nav a:hover {
   opacity: 0.55;
 }
 
-/* subtle underline animation */
 .nav a::after {
   content: "";
   position: absolute;
@@ -121,82 +119,133 @@ h2 {
 }
 
 /* =========================
-   IMAGES
+   TEXT
    ========================= */
+p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #1a1a1a;
+}
 
+.muted {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================
+   IMAGES & SCALING
+   ========================= */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* image rows feel more intentional */
 .image-row {
   display: flex;
   gap: 14px;
-  margin: 18px 0 10px;
+  margin: 20px 0;
+  max-height: 300px; 
+  justify-content: center;
 }
 
 .image-row img {
-  flex: 1;
-  object-fit: cover;
-  border-radius: 8px;
-
-  /* subtle depth (very light, not “card UI”) */
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
-/* responsive */
+/* Truist override: Shrink t0.PNG to 40% of standard max-height */
+.project-card img[src="images/t0.PNG"] {
+  max-height: 320px;
+}
+
 @media (max-width: 600px) {
   .image-row {
     flex-direction: column;
   }
 }
 
-/* single images */
-section > img {
-  border-radius: 8px;
-  margin: 18px 0;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+/* =========================
+   PROJECT CARDS
+   ========================= */
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 22px;
 }
 
-/* =========================
-   TEXT STYLES
-   ========================= */
+.project-card {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
 
-p {
-  font-size: 15.5px;
+.project-desc {
+  font-size: 15px;
   line-height: 1.75;
-  color: #222;
+  color: #333;
+  margin-bottom: 14px;
 }
 
-.muted {
-  color: #666;
-  font-size: 14px;
-}
-
-.caption {
+/* =========================
+   BUTTONS
+   ========================= */
+.project-button {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 10px 14px;
   font-size: 13px;
-  color: #777;
-  margin-top: 6px;
-  margin-bottom: 28px;
+  font-weight: 500;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.project-button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
 }
 
 /* =========================
-   LISTS
+   FOOTER
    ========================= */
-
-ul {
-  padding-left: 18px;
+.site-footer {
+  border-top: 1px solid #e5e5e5;
+  margin-top: 80px;
+  padding: 40px 24px;
+  font-size: 0.9rem;
+  color: #666;
 }
 
-li {
-  margin-bottom: 12px;
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* =========================
-   LINKS
-   ========================= */
+.footer-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
 
 a {
   color: #111;
@@ -204,5 +253,21 @@ a {
 }
 
 a:hover {
-  opacity: 0.6;
+  opacity: 0.65;
+}
+
+/* =========================
+   UTILITY CASE STUDY OVERRIDE
+   Reduces images to 60% width (40% reduction)
+   ========================= */
+.case-study-content img {
+    width: 60%;
+    margin: 30px auto; /* Centers the images and adds vertical breathing room */
+    display: block;    /* Ensures 'margin: auto' works for centering */
+    box-shadow: none;  /* Optional: keeps them flatter if preferred */
+}
+
+/* Optional: Ensure list-embedded images don't look weird at 60% */
+.case-study-content li img {
+    margin: 10px 0;
 }
