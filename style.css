@@ -271,3 +271,10 @@ a:hover {
 .case-study-content li img {
     margin: 10px 0;
 }
+
+/* Center align captions */
+.case-study-content .muted {
+    text-align: center;
+    display: block;
+    margin-top: 5px; /* Adjust spacing between image and caption */
+}
