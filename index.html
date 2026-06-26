@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Systems Design Portfolio</title>
+  <title>Workflow Orchestration | Systems Design Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -12,29 +12,38 @@
   <header class="site-header">
     <div class="nav-container">
       <div class="logo">Systems Design Portfolio</div>
-
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="finserv.html">Financial Systems</a>
-        <a href="utility.html">Utility Systems</a>
-        <a href="systems.html">Systems & Compliance</a>
-        <a href="maps.html" onclick="return gateAccess(event)">Map View</a>
+        <a href="finserv.html">Workflow Orchestration</a>
+        <a href="utility.html">Compliance & Risk</a>
+        <a href="systems.html">Interface Architecture</a>
+        <a href="maps.html" onclick="return gateAccess(event)">Developer Tooling</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-
-    <header>
-      <h1>Systems Design Portfolio</h1>
-
-      <p class="subtitle">
-        I design decision systems across financial, utility, and high-compliance environments — translating complex workflows into structured, usable interfaces.
-      </p>
-    </header>
-
     <section>
-      <h2>Selected Systems</h2>
+    <div class="hero-image-wrapper">
+  <img src="images/me.PNG" alt="Micah Tinklepaugh" class="hero-image" />
+</div>
+  <section>
+  <!-- Remove the inline styles here -->
+  <div class="value-statement">
+    <h1>Operational Design for Critical Infrastructure</h1>
+    <p class="value-description">
+      Architecting high-constraint decision workflows that reduce operational risk 
+      and translate complex datasets into actionable, audit-ready signals.
+    </p>
+  </div>
+  ...
+</section>
+
+  <div class="project-grid">
+     </div>
+</section>
+    <section>
+      
 
       <div class="project-grid">
 
@@ -61,33 +70,29 @@
         </div>
 
         <div class="project-card">
-          <h3>Systems & Compliance (JHU APL)</h3>
+          <h3>Systems & Compliance: High-Constraint Infrastructure</h3>
           <p class="project-desc">
-            Structured risk assessment and compliance-driven decision workflows in high-reliability environments.
+            Architecting interaction patterns that accelerate cross-functional decision-making. 
+            Inspired by synchronous collaborative workflows in aerospace research, this tool 
+            removes asynchronous friction to enable rapid, audit-ready consensus.
           </p>
           <div class="image-row">
-            <img src="images/j1_0_0.PNG" alt="APL workflow">
+            <img src="images/l1.PNG" alt="Collaborative Risk Assessment Workflow">
           </div>
-          <a class="project-button" href="systems.html">View Case Study</a>
+          <a class="project-button" href="systems.html">View Case Study: Designing for Synchronous Flow</a>
         </div>
 
-        <!-- MAP CARD -->
-      <div class="project-card">
-  <h3>Geospatial Interface System</h3>
-
-  <p class="project-desc">
-    A scalable interface model that transforms complex geospatial data ingestion into streamlined, 
-    preset-driven decision workflows.
-  </p>
-
-  <div class="image-row">
-    <img src="images/m3.PNG" alt="Map system workflow collapse">
-  </div>
-
-  <a class="project-button" href="maps.html">
-    View Case Study
-  </a>
-</div>
+        <div class="project-card">
+          <h3>Geospatial Interface System</h3>
+          <p class="project-desc">
+            A scalable interface model that transforms complex geospatial data ingestion into streamlined, 
+            preset-driven decision workflows.
+          </p>
+          <div class="image-row">
+            <img src="images/m3.PNG" alt="Map system workflow collapse">
+          </div>
+          <a class="project-button" href="maps.html">View Case Study</a>
+        </div>
 
       </div>
     </section>
@@ -95,20 +100,17 @@
   </main>
 
 <script>
-function gateAccess(e) {
-  e.preventDefault();
-
-  const password = "stavanger";
-  const input = prompt("Enter access password:");
-
-  if (input === password) {
-    window.location.href = "maps.html";
-  } else {
-    alert("Access denied");
+  function gateAccess(e) {
+    e.preventDefault();
+    const password = "stavanger";
+    const input = prompt("Enter access password:");
+    if (input === password) {
+      window.location.href = "maps.html";
+    } else {
+      alert("Access denied");
+    }
+    return false;
   }
-
-  return false;
-}
 </script>
 
 </body>

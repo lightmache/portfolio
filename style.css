@@ -8,50 +8,28 @@ body {
   color: #0f0f0f;
   background: #fff;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
-/* =========================
-   LAYOUT
-   ========================= */
+/* 950px width provides a professional column; 40px padding adds the desktop breathing room */
 .container {
-  max-width: 900px;
+  max-width: 950px;
   margin: 96px auto;
-  padding: 0 24px;
+  padding: 0 40px;
+
+  .hero-image {
+  width: 160px;       /* Increased from 80px */
+  height: 160px;      /* Increased from 80px */
+  object-fit: cover;  
+  border-radius: 50%; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;     
 }
 
-/* =========================
-   TYPOGRAPHY
-   ========================= */
-h1 {
-  font-size: 44px;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin-bottom: 14px;
-  font-weight: 650;
+.hero-image-wrapper {
+  margin-top: 48px;   /* Slightly more space to accommodate the larger size */
+  margin-bottom: 24px;
 }
-
-h2 {
-  font-size: 20px;
-  font-weight: 650;
-  margin-top: 56px;
-  margin-bottom: 18px;
-  letter-spacing: -0.015em;
-}
-
-h3 {
-  font-size: 17px;
-  font-weight: 650;
-  margin: 0 0 10px 0;
-  letter-spacing: -0.01em;
-}
-
-.subtitle {
-  color: #333;
-  font-size: 17px;
-  line-height: 1.8;
-  max-width: 75ch;
-  margin-bottom: 48px;
 }
 
 /* =========================
@@ -63,146 +41,78 @@ h3 {
   z-index: 1000;
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .nav-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 14px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.6px;
-  color: #666;
-  text-transform: uppercase;
-}
-
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  font-size: 14px;
-  color: #111;
-  text-decoration: none;
-  padding: 6px 2px;
-  position: relative;
-}
-
-.nav a:hover {
-  opacity: 0.55;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 100%;
-  height: 1px;
-  background: #111;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
-
-.nav a:hover::after {
-  transform: scaleX(1);
-}
+.logo { font-size: 12px; font-weight: 600; letter-spacing: 0.6px; color: #666; text-transform: uppercase; }
+.nav { display: flex; gap: 20px; }
+.nav a { font-size: 14px; color: #111; text-decoration: none; padding: 6px 2px; position: relative; }
+.nav a:hover { opacity: 0.55; }
 
 /* =========================
-   TEXT
+   TYPOGRAPHY SYSTEM
    ========================= */
-p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #1a1a1a;
+h1 { 
+  font-size: 40px; 
+  line-height: 1.2; 
+  letter-spacing: -0.02em; 
+  margin-bottom: 24px; 
+  font-weight: 700; 
 }
 
-.muted {
-  color: #555;
-  font-size: 14px;
-  line-height: 1.6;
+h2 { 
+  font-size: 28px; 
+  line-height: 1.3;
+  font-weight: 700; 
+  margin-top: 48px; 
+  margin-bottom: 24px; 
+  letter-spacing: -0.01em; 
 }
 
-/* =========================
-   IMAGES & SCALING
-   ========================= */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+h3 {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 650;
+  margin-bottom: 12px;
 }
 
-.image-row {
-  display: flex;
-  gap: 14px;
-  margin: 20px 0;
-  max-height: 300px; 
-  justify-content: center;
-}
-
-.image-row img {
-  max-width: 100%;
-  max-height: 300px;
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-}
-
-/* Truist override: Shrink t0.PNG to 40% of standard max-height */
-.project-card img[src="images/t0.PNG"] {
-  max-height: 320px;
-}
-
-@media (max-width: 600px) {
-  .image-row {
-    flex-direction: column;
-  }
-}
-
-/* =========================
-   PROJECT CARDS
-   ========================= */
-.project-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  margin-top: 22px;
-}
-
-.project-card {
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
-  padding: 24px;
-  background: #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
+p { 
+  font-size: 17px; 
+  line-height: 1.8; 
+  color: #333; 
+  margin-bottom: 16px;
 }
 
 .project-desc {
-  font-size: 15px;
-  line-height: 1.75;
-  color: #333;
-  margin-bottom: 14px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
 }
 
 /* =========================
-   BUTTONS
+   CARDS & GRID
    ========================= */
+.project-grid { display: flex; flex-direction: column; gap: 28px; margin-top: 22px; }
+
+.project-card { 
+  border: 1px solid rgba(0, 0, 0, 0.08); 
+  border-radius: 12px; 
+  padding: 32px; 
+  background: #fff; 
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04); 
+}
+
 .project-button {
   display: inline-block;
-  align-self: flex-start;
   padding: 10px 14px;
   font-size: 13px;
   font-weight: 500;
@@ -210,71 +120,22 @@ img {
   background: #111;
   color: #fff;
   text-decoration: none;
-  transition: transform 0.15s ease, opacity 0.2s ease;
-}
-
-.project-button:hover {
-  opacity: 0.85;
-  transform: translateY(-1px);
+  margin-top: 10px;
 }
 
 /* =========================
-   FOOTER
+   TOAST & UTILS
    ========================= */
-.site-footer {
-  border-top: 1px solid #e5e5e5;
-  margin-top: 80px;
-  padding: 40px 24px;
-  font-size: 0.9rem;
-  color: #666;
+.context-toast { 
+  background: #fff3cd; 
+  padding: 1rem; 
+  border-radius: 4px; 
+  font-size: 0.9em; 
+  margin-bottom: 2rem; 
+  border: 1px solid #ffeeba; 
 }
 
-.footer-container {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+.image-row { display: flex; gap: 14px; margin: 20px 0; justify-content: center; }
+.image-row img { border-radius: 10px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06); max-height: 300px; }
 
-.footer-link {
-  color: #000;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.footer-link:hover {
-  text-decoration: underline;
-}
-
-a {
-  color: #111;
-  text-decoration: none;
-}
-
-a:hover {
-  opacity: 0.65;
-}
-
-/* =========================
-   UTILITY CASE STUDY OVERRIDE
-   Reduces images to 60% width (40% reduction)
-   ========================= */
-.case-study-content img {
-    width: 60%;
-    margin: 30px auto; /* Centers the images and adds vertical breathing room */
-    display: block;    /* Ensures 'margin: auto' works for centering */
-    box-shadow: none;  /* Optional: keeps them flatter if preferred */
-}
-
-/* Optional: Ensure list-embedded images don't look weird at 60% */
-.case-study-content li img {
-    margin: 10px 0;
-}
-
-/* Center align captions */
-.case-study-content .muted {
-    text-align: center;
-    display: block;
-    margin-top: 5px; /* Adjust spacing between image and caption */
-}
+.case-study-content img { width: 60%; margin: 30px auto; display: block; }

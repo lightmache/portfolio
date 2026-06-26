@@ -3,140 +3,98 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Systems & Compliance Design — APL Work</title>
+  <title>Workflow Orchestration | Systems Design Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+<header class="site-header">
+  <div class="nav-container">
+    <div class="logo">Systems Design Portfolio</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="finserv.html">Workflow Orchestration</a>
+      <a href="utility.html">Compliance & Risk</a>
+      <a href="systems.html">Interface Architecture</a>
+      <a href="maps.html" onclick="return gateAccess(event)">Developer Tooling</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- GLOBAL NAV -->
-  <header class="site-header">
-    <div class="nav-container">
-
-      <div class="logo">Systems Design Portfolio</div>
-
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="finserv.html">Financial Services</a>
-        <a href="utility.html">Utility Systems</a>
-        <a href="systems.html">Systems & Compliance</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="container">
-
-    <!-- CONTEXT BADGE (NEW — THIS WAS MISSING BEFORE) -->
+<main class="container">
     <div class="context-toast">
-      Notional portfolio reconstruction — interface patterns and workflows are illustrative only
+      <strong>Portfolio Note:</strong> The interface examples below are notional recreations. They demonstrate interaction patterns and workflow logic used in high-constraint environments while strictly protecting proprietary data and intellectual property.
     </div>
 
-    <!-- HERO -->
-    <header>
-      <h1>Systems & Compliance Design (APL Work)</h1>
-
-      <p class="subtitle">
-        Work conducted in a high-constraint research environment focused on structured workflows,
-        decision systems, and auditable information transformation pipelines. Artifacts are reconstructed for portfolio clarity.
-      </p>
-
-      <p class="muted">
-        Systems UX · High-constraint environments · Structured decision design
-      </p>
+    <header class="hero">
+      <h1>Systems & Compliance Design</h1>
+      <p><em>Interaction design for high-reliability decision environments.</em></p>
+      <p>Architected a <strong>conditional safety-gated intake system</strong> that replaces disconnected ticket queues with an automated, synchronous review pipeline, drastically reducing compliance latency.</p>
     </header>
 
-    <!-- PROJECT 1 -->
     <section>
-      <h2>Geospatial Workflow System</h2>
+      <h2>Research Context: Space Sector-Driven Design Thinking</h2>
+      <figure class="citation-block" style="margin: 2rem 0; padding-left: 1.5rem; border-left: 3px solid #ccc;">
+        <img src="images/l1.png" alt="Lunar Surface Innovation Consortium Banner" style="max-width: 100%; height: auto; margin-bottom: 1rem;">
+        <blockquote cite="https://www.nasa.gov/space-technology-mission-directorate/lunar-surface-innovation-initiative/" style="margin: 0; font-style: italic;">
+          <p>"The Lunar Surface Innovation Consortium (LSIC)... brings together government, academia, non-profit institutions, and the private sector to identify technological capabilities and hurdles that must be retired to achieve a sustained presence on the surface of the Moon."</p>
+        </blockquote>
+        <figcaption class="muted" style="margin-top: 0.75rem; font-size: 0.9em;">
+          Source: NASA STMD | Credit: NASA/JHU Applied Physics Laboratory
+        </figcaption>
+      </figure>
 
-      <p>
-        Designed a structured workflow for transforming static geospatial inputs into interactive, navigable artifacts
-        through a multi-stage transformation pipeline.
-      </p>
-
-      <img src="images/j1.PNG" alt="Geospatial workflow system">
-
-      <p class="muted">
-        Static spatial inputs → transformation pipeline → structured interactive output
-      </p>
-
-      <p>
-        Focused on reducing ambiguity in how spatial datasets were organized, processed, and interpreted across downstream use.
-      </p>
+      <p>Through facilitating design-thinking workshops for the NASA-funded LSIC, I observed how these cross-sector teams achieve "synchronous synthesis." I adopted their space sector-driven methodology to build internal tooling that orchestrates multi-stakeholder workflows into a single, audit-ready decision stream, ensuring consensus is never slowed by fragmented, asynchronous friction.</p>
     </section>
 
-    <!-- PROJECT 2 -->
     <section>
-      <h2>Decision Intake & Risk Evaluation System</h2>
+      <h2>Interactive Prototype: Material Handling Pipeline</h2>
+      <p>This prototype demonstrates how automated logic gates prevent "latency gaps" by forcing safety validation at the point of entry.</p>
 
-      <p>
-        Designed a structured intake system for evaluating high-constraint inputs through staged review logic.
-      </p>
+      <div id="intake-card" style="border: 1px solid #ccc; border-radius: 8px; padding: 20px; max-width: 600px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h2 id="card-title" style="margin-top: 0; font-size: 1.25rem;">SYSTEM INTAKE: Material Handling Review</h2>
+        <div id="status-bar" style="background: #eee; padding: 10px; margin-bottom: 15px; border-radius: 4px; font-size: 0.9em;">
+          <strong>Step 1:</strong> Input Data (Active) | <strong>Step 2:</strong> Automated Routing (Queued)
+        </div>
 
-      <img src="images/j1_0.PNG" alt="Risk intake decision UI">
+        <div style="margin-bottom: 15px;">
+          <label style="display: block; font-weight: bold; margin-bottom: 5px;">Material & Handling Context</label>
+          <input type="text" value="Search: Cryogenic Hydrogen (H₂)" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+        </div>
 
-      <p class="muted">
-        Risk signals → structured synthesis → review-ready decision state
-      </p>
+        <div style="border: 2px solid #007bff; padding: 15px; border-radius: 6px; margin: 15px 0;">
+          <strong style="color: #007bff; display: block; margin-bottom: 5px;">EHS AUTOMATED PRESCREENING</strong>
+          <p style="margin: 0 0 10px 0; font-size: 0.9em;">Triggering EHS Condition: Flammable/Cryogenic Material Detected</p>
+          <div style="margin-bottom: 10px;"><label style="display: flex; align-items: center; font-size: 0.95em; cursor: pointer;"><input type="checkbox" style="margin-right: 10px;"> Verify active venting system validation status? [Yes] / [No] <span style="color:red; font-weight:bold; margin-left: 5px;">!</span></label></div>
+          <div><label style="display: flex; align-items: center; font-size: 0.95em; cursor: pointer;"><input type="checkbox" style="margin-right: 10px;"> Mandatory full-time EHS oversight required during handling? [Yes] / [No] <span style="color:red; font-weight:bold; margin-left: 5px;">!</span></label></div>
+        </div>
 
-      <p>
-        The interface reduced cognitive load by consolidating multi-variable inputs into a single structured decision view.
-      </p>
-
-      <p>
-        Conditional logic enabled progressive disclosure, reducing unnecessary input burden while preserving required evaluation fields.
-      </p>
+        <button id="submit-btn" onclick="submitForm()" style="background: #000; color: #fff; width: 100%; padding: 12px; border: none; cursor: pointer; font-weight: bold; border-radius: 4px;">
+          Route for Synchronous Review (Gated by EHS)
+        </button>
+        <div id="action-container" style="margin-top: 10px;"></div>
+      </div>
     </section>
 
-    <!-- SYSTEM LAYER (THIS IS THE REAL STRUCTURAL IMPROVEMENT) -->
-    <section>
-      <h2>Visualization & Systemization Layer</h2>
+    <div id="action-toast" style="display: none; max-width: 300px; background-color: #fff3cd; border: 2px solid #ffc107; color: #856404; border-radius: 6px; padding: 15px; position: fixed; z-index: 100; right: 30px; bottom: 30px; flex-direction: row; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <span style="word-wrap: break-word; flex-grow: 1; margin-right: 15px;">Document sent to your email with instructions.</span>
+      <button onclick="dismissToast()" style="background: none; border: 2px solid #856404; color: #856404; font-weight: bold; cursor: pointer; padding: 2px 8px; border-radius: 4px;">X</button>
+    </div>
 
-      <p>
-        A shared visualization layer was introduced to standardize how structured outputs were represented across geospatial and decision systems.
-      </p>
-
-      <img src="images/j1_0_0.PNG" alt="Visualization system layer">
-
-      <p>
-        This layer defined consistent rules for project risk states, and structured outputs.
-      </p>
-
-      <p class="muted">
-        Outcome: reduced lead time for consensus on risk level and decision making. 
-      </p>
-    </section>
-
-    <!-- CONSTRAINTS -->
-    <section>
-      <h2>Design Constraints</h2>
-
-      <p>
-        Both systems were designed under strict constraints:
-      </p>
-
-      <p>
-        • Structured and auditable information flows<br>
-        • Multi-stage decision workflows<br>
-        • Cognitive load reduction in high-complexity environments
-      </p>
-    </section>
-
-    <!-- OUTCOME -->
-    <section>
-      <h2>Outcome</h2>
-
-      <p>
-        Across both systems, the primary impact was improved clarity of structured workflows and reduced procedural friction.
-      </p>
-
-      <p>
-        The work emphasized transforming complex inputs into structured, reviewable outputs that supported consistent downstream interpretation.
-      </p>
-    </section>
-
+    <script>
+      function submitForm() {
+        document.getElementById("action-toast").style.display = "flex";
+        const btn = document.getElementById("submit-btn");
+        btn.innerText = "Edit";
+        btn.style.background = "#333";
+        const container = document.getElementById("action-container");
+        container.innerHTML = '<button style="background: none; border: 2px solid #d9534f; color: #d9534f; width: 100%; padding: 12px; cursor: pointer; font-weight: bold; border-radius: 4px;">Delete Submission</button>';
+        document.getElementById("status-bar").innerHTML = "<strong>Status:</strong> Submission Processed & Routing Active";
+      }
+      function dismissToast() {
+        document.getElementById("action-toast").style.display = "none";
+      }
+    </script>
   </main>
-
 </body>
 </html>
